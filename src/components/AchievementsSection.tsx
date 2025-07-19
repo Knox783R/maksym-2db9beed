@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Zap, Shield, Users, Github, Globe } from "lucide-react";
+import achievementsImage from "@/assets/achievements-bg.jpg";
 
 const AchievementsSection = () => {
   const achievements = [
@@ -49,10 +50,20 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-hero">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-hero relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src={achievementsImage} 
+          alt="Achievements background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/50" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
             Key Achievements
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
